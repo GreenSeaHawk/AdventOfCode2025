@@ -1,6 +1,6 @@
 package org.example;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.example.Day1.Day1;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

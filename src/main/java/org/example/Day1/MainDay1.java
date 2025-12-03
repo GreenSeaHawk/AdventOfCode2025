@@ -1,11 +1,11 @@
-package org.example;
+package org.example.Day1;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public class Main {
+public class MainDay1 {
     public static void main(String[] args) throws IOException {
         int dial = 50;
         int count = 0;

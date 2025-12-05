@@ -9,17 +9,68 @@ public class Day2 {
     public static long invalidID(long start, long finish) {
         long sum = 0;
         for (long i = start; i <= finish; i++) {
-            String num = String.valueOf(i);
-            int lenString = num.length();
-            if (lenString % 2 == 0) {
-                String string1 = num.substring(0, lenString/2);
-                String string2 = num.substring(lenString/2, lenString);
-                if (string1.equals(string2)) {
-                    sum += i;
-                }
+            if (repeatNum(i)) {
+                sum += i;
             }
         }
         return sum;
     }
 
+    public static boolean repeatNum(long num) {
+        boolean repeats = false;
+        String numStr = String.valueOf(num);
+        int lenString = numStr.length();
+        if (lenString % 2 == 0) {
+            String string1 = numStr.substring(0, lenString/2);
+            String string2 = numStr.substring(lenString/2, lenString);
+            if (string1.equals(string2)) {
+                repeats = true;
+            }
+        }
+        if (lenString % 3 == 0) {
+            String string1 = numStr.substring(0, lenString/3);
+            String string2 = numStr.substring(lenString/3, lenString*2/3);
+            String string3 = numStr.substring(lenString*2/3, lenString);
+            if (string1.equals(string2) && string1.equals(string3)) {
+                repeats = true;
+            }
+        }
+        if (lenString % 4 == 0) {
+            String string1 = numStr.substring(0, lenString/4);
+            String string2 = numStr.substring(lenString/4, lenString/2);
+            String string3 = numStr.substring(lenString/2, lenString*3/4);
+            String string4 = numStr.substring(lenString*3/4, lenString);
+            if (string1.equals(string2) && string1.equals(string3) && string1.equals(string4)) {
+                repeats = true;
+            }
+        }
+        if (lenString % 5 == 0) {
+            String string1 = numStr.substring(0, lenString/5);
+            String string2 = numStr.substring(lenString/5, lenString*2/5);
+            String string3 = numStr.substring(lenString*2/5, lenString*3/5);
+            String string4 = numStr.substring(lenString*3/5, lenString*4/5);
+            String string5 = numStr.substring(lenString*4/5, lenString);
+            if (string1.equals(string2) && string1.equals(string3) && string1.equals(string4) && string1.equals(string5)) {
+                repeats = true;
+            }
+        }
+        if (lenString % 7 == 0) {
+            String string1 = numStr.substring(0, lenString/7);
+            String string2 = numStr.substring(lenString/7, lenString*2/7);
+            String string3 = numStr.substring(lenString*2/7, lenString*3/7);
+            String string4 = numStr.substring(lenString*3/7, lenString*4/7);
+            String string5 = numStr.substring(lenString*4/7, lenString*5/7);
+            String string6 = numStr.substring(lenString*5/7, lenString*6/7);
+            String string7 = numStr.substring(lenString*6/7, lenString);
+            if (string1.equals(string2)
+                    && string1.equals(string3)
+                    && string1.equals(string4)
+                    && string1.equals(string5)
+                    && string1.equals(string6)
+                    && string1.equals(string7)) {
+                repeats = true;
+            }
+        }
+        return repeats;
+    }
 }

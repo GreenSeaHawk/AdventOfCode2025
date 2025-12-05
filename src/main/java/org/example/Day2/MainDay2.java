@@ -15,6 +15,6 @@ public class MainDay2 {
             long num2 = Long.parseLong(part.split("-")[1]);
             total += Day2.invalidID(num1, num2);
         }
-        System.out.println("Day 2, part 1 answer: " + total);
+        System.out.println("Day 2, part 2 answer: " + total);
     }
 }

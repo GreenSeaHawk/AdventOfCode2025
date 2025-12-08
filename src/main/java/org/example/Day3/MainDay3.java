@@ -8,7 +8,7 @@ import java.util.List;
 
 public class MainDay3 {
     public static void main(String[] args) throws IOException {
-        int sum = 0;
+        Long sum = 0L;
         List<String> lines = Files.readAllLines(Path.of("src/data/Day3FullData.txt"));
         for (String line : lines) {
             sum += Day3.biggestInt(line);

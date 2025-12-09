@@ -16,7 +16,13 @@ public class Day4Test {
         testMatrix.add(new ArrayList<>(List.of("@", "@", "@")));
         testMatrix.add(new ArrayList<>(List.of("@", "@", "@")));
         testMatrix.add(new ArrayList<>(List.of("@", "@", "@")));
-        assertEquals(4, Day4.accessRolls(testMatrix));
+        ArrayList<Object> result = Day4.accessRolls(testMatrix);
+        assertEquals(4, result.get(0));
+        List<List<String>> expectedReturnMatrix = new ArrayList<>();
+        expectedReturnMatrix.add(new ArrayList<>(List.of(".", "@", ".")));
+        expectedReturnMatrix.add(new ArrayList<>(List.of("@", "@", "@")));
+        expectedReturnMatrix.add(new ArrayList<>(List.of(".", "@", ".")));
+        assertEquals(expectedReturnMatrix, result.get(1));
     }
 
 }

@@ -23,6 +23,18 @@ public class MainDay4 {
 //        first number is y second number is x
         System.out.println(lenOfLine);
         System.out.println(numOfLines);
-        System.out.println("Day 4, part 1: " + Day4.accessRolls(matrix));
+        int totalRemoved = 0;
+        int removed = 0;
+        ArrayList<Object> result = Day4.accessRolls(matrix);
+        removed = (int) result.get(0);
+        totalRemoved += removed;
+        List<List<String>> newMatrix = (List<List<String>>) result.get(1);
+        while (removed != 0){
+            ArrayList<Object> newResult = Day4.accessRolls(newMatrix);
+            removed = (int) newResult.get(0);
+            newMatrix = (List<List<String>>) newResult.get(1);
+            totalRemoved += removed;
+        }
+        System.out.println("Day 4, part 1: " + totalRemoved);
     }
 }
